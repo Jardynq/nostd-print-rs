@@ -6,8 +6,8 @@ license = "MIT OR Apache-2.0"
 repository = "https://github.com/Jardynq/nostd-print-rs"
 documentation = "https://docs.rs/nostd-print"
 readme = "README.md"
-keywords = ["nostd", "print", "stdout", "stderr", "stdin", "windows", "unix", "linux", "mac"]
-categories = ["nostd"]
+keywords = ["no_std", "print", "terminal", "windows", "unix"]
+categories = ["no-std"]
 description = "#[no_std] print for Rust on Windows and Unix systems"
 
 [features]
