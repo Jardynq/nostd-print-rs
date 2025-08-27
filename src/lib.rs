@@ -21,9 +21,9 @@ pub use crate::windows::read_to_buf;
 pub mod alloc_feature {
     extern crate alloc;
     use alloc::string::String;
-    
+
     const BUF_SIZE: usize = 128;
-    pub fn read_string() -> String {
+    pub fn read_to_string() -> String {
         let mut result = String::new();
         let mut buf = [0u8; BUF_SIZE];
         while let Some(count) = super::read_to_buf(&mut buf) {
