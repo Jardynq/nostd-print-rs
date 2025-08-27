@@ -2,6 +2,13 @@
 name = "nostd-print"
 version = "0.1.0"
 edition = "2024"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/Jardynq/nostd-print-rs"
+documentation = "https://docs.rs/nostd-print"
+readme = "README.md"
+keywords = ["nostd", "print", "stdout", "stderr", "stdin", "windows", "unix", "linux", "mac"]
+categories = ["nostd"]
+description = "#[no_std] print for Rust on Windows and Unix systems"
 
 [features]
 default = []
