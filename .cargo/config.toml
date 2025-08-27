@@ -1,0 +1,2 @@
+[alias]
+test2 = "test --features alloc --release -- --test-threads=1"
