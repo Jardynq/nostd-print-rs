@@ -46,7 +46,7 @@ pub use alloc_feature::*;
 macro_rules! print {
     ($($arg:tt)*) => ({
         use core::fmt::Write;
-        let mut writer = $crate::nostd_print::internal::Writer::stdout();
+        let mut writer = $crate::internal::Writer::stdout();
         let _ = write!(&mut writer, "{}", format_args!($($arg)*));
     })
 }
@@ -54,7 +54,7 @@ macro_rules! print {
 macro_rules! println {
     ($($arg:tt)*) => ({
         use core::fmt::Write;
-        let mut writer = $crate::nostd_print::internal::Writer::stdout();
+        let mut writer = $crate::internal::Writer::stdout();
         let _ = writeln!(&mut writer, "{}", format_args!($($arg)*));
     })
 }
@@ -63,7 +63,7 @@ macro_rules! println {
 macro_rules! eprint {
     ($($arg:tt)*) => ({
         use core::fmt::Write;
-        let mut writer = $crate::nostd_print::internal::Writer::stderr();
+        let mut writer = $crate::internal::Writer::stderr();
         let _ = write!(&mut writer, "{}", format_args!($($arg)*));
     })
 }
@@ -71,13 +71,10 @@ macro_rules! eprint {
 macro_rules! eprintln {
     ($($arg:tt)*) => {{
         use core::fmt::Write;
-        let mut writer = $crate::nostd_print::internal::Writer::stderr();
+        let mut writer = $crate::internal::Writer::stderr();
         let _ = writeln!(&mut writer, "{}", format_args!($($arg)*));
     }};
 }
-
-#[allow(unused_imports)]
-use crate as nostd_print;
 
 #[cfg(test)]
 mod test {
@@ -124,7 +121,7 @@ mod test {
     #[cfg(feature = "alloc")]
     #[test]
     fn test_alloc() {
-        let s = read_string();
+        let s = read_to_string();
         println!("String: {s:?}");
     }
 }
